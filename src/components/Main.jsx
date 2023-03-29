@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { Navbar } from "./";
 import { getQuotes } from "../api/quotes";
-import ReactSound from "react-sound";
-import Sound from 'react-sound'
+
 
 const Main = () => {
 const [quote, setQuote] = useState([])
@@ -16,16 +15,13 @@ const [quote, setQuote] = useState([])
     callGetQuote()
   }, [])
 
-
+  function play() {
+    new Audio(sound).play()
+  }
 
   return (
     <div id="main">
       <Navbar />
-      <Sound
-      url='06 Light Through the Veins.m4a.'
-      playStatus={ReactSound.status.PLAYING}
-      playFromPosition={300}
-      />
       <div>
         {quote.quote}
       </div>
