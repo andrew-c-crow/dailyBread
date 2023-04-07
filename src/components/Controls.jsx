@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
     IoPlayBackSharp,
     IoPlayForwardSharp,
@@ -10,8 +10,16 @@ import {
   } from 'react-icons/io5';
 
 
-const Controls = () => {
+const Controls = ({audioRef}) => {
     const [isPlaying, setIsPlaying] = useState(false)
+
+    useEffect(() => {
+        if(isPlaying) {
+            audioRef.current.play()
+        } else {
+            audioRef.current.pause()
+        }
+    }, [isPlaying, audioRef])
 
     const togglePlayPause = () => {
         setIsPlaying((prev) => !prev);

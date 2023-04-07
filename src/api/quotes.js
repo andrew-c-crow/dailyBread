@@ -1,17 +1,18 @@
+// process.env.REACT_APP_API_KEY
 
+// eec22e11d0msh1f000820650400ep18faf7jsnec5ff174e350
 
 export async function getQuotes() {
     const options = {
-        method: 'POST',
+        method: 'GET',
         headers: {
-            'content-type': 'application/json',
+            
             'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
-            'X-RapidAPI-Host': 'quotel-quotes.p.rapidapi.com'
+            'X-RapidAPI-Host': 'quotes15.p.rapidapi.com'
         },
-        body: '{"ids":[879890,1]}'
     };
     try {
-        const response = await fetch('https://quotel-quotes.p.rapidapi.com/quotes/qod', options)
+        const response = await fetch('https://quotes15.p.rapidapi.com/quotes/random/?language_code=en', options)
         const result = await response.json()
         console.log(result)
         return result
