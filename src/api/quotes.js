@@ -1,6 +1,4 @@
-// process.env.REACT_APP_API_KEY
 
-// eec22e11d0msh1f000820650400ep18faf7jsnec5ff174e350
 
 export async function getQuotes() {
     const options = {
