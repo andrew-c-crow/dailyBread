@@ -19,7 +19,7 @@ const DisplayTrack = ({currentTrack, audioRef, setDuration, progressBarRef}) => 
         <div className="audio-info">
             <div className="audio-image">
             {currentTrack.thumbnail ? (
-                <img src={currentTrack.thumbnail} alt="audio avatar"/>
+                <img className="track-thumbnail"src={currentTrack.thumbnail} alt="audio avatar"/>
             ): (
                 <div className= "icon-wrapper">
                     <span className="audio-icon"> 

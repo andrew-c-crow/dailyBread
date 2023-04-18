@@ -24,7 +24,6 @@ const Controls = ({audioRef, progressBarRef, duration, setTimeProgress}) => {
             '--range-progress',
             `${(progressBarRef.current.value / duration) * 100}%`
         )
-        
         playAnimationRef.current = requestAnimationFrame(repeat)
     }, [audioRef, duration, progressBarRef, setTimeProgress]);
 
@@ -33,11 +32,10 @@ const Controls = ({audioRef, progressBarRef, duration, setTimeProgress}) => {
     useEffect(() => {
         if(isPlaying) {
             audioRef.current.play()
-            playAnimationRef.current = requestAnimationFrame(repeat);
         } else {
             audioRef.current.pause()
-            cancelAnimationFrame(playAnimationRef.current);
         }
+        playAnimationRef.current = requestAnimationFrame(repeat);
     }, [isPlaying, audioRef])
 
     const togglePlayPause = () => {
@@ -47,13 +45,13 @@ const Controls = ({audioRef, progressBarRef, duration, setTimeProgress}) => {
     return(
         <div className='controls-wrapper'>
             <div className='controls'>
-                <button><IoPlaySkipBackSharp/></button>
-                <button><IoPlayBackSharp/></button>
+                <button onClick={handlePrevious}><IoPlaySkipBackSharp/></button>
+                <button onClick={skipBackward}><IoPlayBackSharp/></button>
                 <button onClick={togglePlayPause}>
                     {isPlaying ? <IoPauseSharp /> : <IoPlaySharp />}
                 </button>
-                <button><IoPlayForwardSharp /></button>
-                <button><IoPlaySkipForwardSharp /></button>
+                <button onClick={skipForward}><IoPlayForwardSharp /></button>
+                <button onClick={handleNext}><IoPlaySkipForwardSharp /></button>
             </div>
         </div>
     )

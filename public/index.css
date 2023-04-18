@@ -10,7 +10,7 @@ input[type="range"] {
     -webkit-appearance: none;
     position: relative;
     background:#ccc;
-    width: 100%;
+    width: 20%;
     height: 2px;
     border-radius: 2px;
     cursor: pointer;
@@ -20,7 +20,7 @@ input[type="range"] {
   input[type="range"]::-moz-range-track {
     position: relative;
     background:#ccc;
-    width: 100%;
+    width: 20%;
     height: 2px;
     border-radius: 2px;
     cursor: pointer;
@@ -78,3 +78,8 @@ input[type="range"] {
   input[type="range"]:active::-moz-range-thumb {
     transform: scale(1.2);
   }
+
+.track-thumbnail{
+    width: 100px;
+  }
+
