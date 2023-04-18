@@ -42,6 +42,22 @@ const Controls = ({audioRef, progressBarRef, duration, setTimeProgress}) => {
         setIsPlaying((prev) => !prev);
       };
 
+      const handlePrevious = () => {
+
+      }
+
+      const skipBackward = () => {
+
+      }
+
+      const skipForward = () => {
+
+      }
+
+      const handleNext = () => {
+        
+      }
+
     return(
         <div className='controls-wrapper'>
             <div className='controls'>
